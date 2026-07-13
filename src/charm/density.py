@@ -78,7 +78,7 @@ class RealNVP(nn.Module):
 
 @dataclass(slots=True)
 class EmpiricalCDF:
-    """Finite-sample rank map with the paper's add-one convention."""
+    """Finite-sample rank map with an add-one convention."""
 
     sorted_values: torch.Tensor
 

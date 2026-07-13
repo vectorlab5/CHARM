@@ -10,7 +10,6 @@ import yaml
 
 REQUIRED_PATHS = (
     "README.md",
-    "CITATION.cff",
     "pyproject.toml",
     "configs/base.yaml",
     "docs/DATA_FORMAT.md",
@@ -25,7 +24,7 @@ FORBIDDEN_TEXT = (
     re.compile("track" + r"(ed)?\s+" + "changes", re.IGNORECASE),
     re.compile("temporary" + r"\s+" + "synthetic", re.IGNORECASE),
 )
-TEXT_SUFFIXES = {".cff", ".json", ".md", ".py", ".toml", ".txt", ".yaml", ".yml"}
+TEXT_SUFFIXES = {".json", ".md", ".py", ".toml", ".txt", ".yaml", ".yml"}
 
 
 def audit(root: Path, require_license: bool = True) -> list[str]:

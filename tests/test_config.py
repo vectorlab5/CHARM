@@ -1,7 +1,7 @@
 from charm.config import load_config
 
 
-def test_extended_config_matches_paper_defaults() -> None:
+def test_extended_config_matches_project_defaults() -> None:
     config = load_config("configs/dunhuang.yaml")
     assert config["model"]["style_dim"] == 128
     assert config["model"]["execution_dim"] == 128

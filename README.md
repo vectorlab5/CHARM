@@ -1,11 +1,8 @@
-# CHARM reference implementation
+# CHARM
 
-This repository contains a clean-room reference implementation of **Canonical
-Heritage-Aware Representation and Motion modeling (CHARM)** and the **Canonical Style
-Centrality Score (CSCS)** described in:
-
-> You Fu. *Canonical Style beyond Realism: Disentangled, Low-Resource Modeling of
-> Intangible Heritage Performance.* Information Sciences submission.
+This repository contains an executable implementation of **Canonical Heritage-Aware
+Representation and Motion modeling (CHARM)** and the **Canonical Style Centrality Score
+(CSCS)**.
 
 CSCS is a corpus-relative, sample-level density rank. It does not measure cultural validity
 or generative distribution coverage.
@@ -20,11 +17,11 @@ or generative distribution coverage.
 - held-out empirical-CDF calibration and CSCS evaluation;
 - category-restricted top-k retrieval memory;
 - retrieval-conditioned motion diffusion with classifier-free guidance;
-- YAML configurations matching the principal hyperparameters reported in the paper;
+- YAML configurations for the default training and evaluation workflow;
 - tests and GitHub Actions configuration.
 
-The third-party datasets, unpublished run logs, and trained checkpoints are not included.
-No experimental table is reconstructed from invented or illustrative observations.
+The third-party datasets, private run logs, and trained checkpoints are not included. The
+repository contains no generated results based on invented or illustrative observations.
 
 ## Installation
 
@@ -101,27 +98,21 @@ charm-evaluate \
 ```
 
 If an authorized non-heritage pretraining checkpoint is available, pass it through
-`--initialize-from`. This repository does not include or manufacture the manuscript's
-pretraining checkpoint.
+`--initialize-from`. This repository does not include or manufacture a pretraining
+checkpoint.
 
-Use `--epochs` on the training commands for a short integration check. The paper
-configurations retain the reported 1200 representation epochs, 800 generator epochs, 1000
-diffusion steps, latent dimensions of 128, retrieval `k=8`, and guidance weight `w=3`.
+Use `--epochs` on the training commands for a short integration check. The default
+configurations use 1200 representation epochs, 800 generator epochs, 1000 diffusion steps,
+latent dimensions of 128, retrieval `k=8`, and guidance weight `w=3`.
 
 ## Reproducibility boundary
 
 The public code supplies executable method components and deterministic split logic. Exact
-paper-table reproduction additionally requires the authors' frozen split files, checkpoints,
+reproduction of a particular run additionally requires its frozen split files, checkpoints,
 per-seed outputs, and dataset-specific pose preprocessing details. See
 [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) before creating a release.
 
-## Citation
-
-Citation metadata are provided in [`CITATION.cff`](CITATION.cff). The source repository is
-[vectorlab5/CHARM](https://github.com/vectorlab5/CHARM); a final article DOI can be added after
-publication.
-
-Before publishing, follow [`docs/RELEASE_CHECKLIST.md`](docs/RELEASE_CHECKLIST.md) and run:
+Before releasing, follow [`docs/RELEASE_CHECKLIST.md`](docs/RELEASE_CHECKLIST.md) and run:
 
 ```bash
 pytest

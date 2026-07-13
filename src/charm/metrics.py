@@ -1,4 +1,4 @@
-"""Metrics reported or used by the CHARM evaluation pipeline."""
+"""Metrics used by the CHARM evaluation pipeline."""
 
 from __future__ import annotations
 

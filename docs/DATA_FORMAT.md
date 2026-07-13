@@ -25,9 +25,9 @@ joint remapping and scale normalization require explicit arguments.
 
 For calibrated multi-view input, `scripts/triangulate_multiview.py` implements weighted DLT
 triangulation from 2D detections and 3x4 camera projection matrices. Pose detection itself is
-not included because the paper does not identify a frozen detector checkpoint. Record the
-detector name, version, weights, confidence threshold, camera calibration, failed frames, and
-retargeting map alongside the generated archive.
+not prescribed by this repository. Record the detector name, version, weights, confidence
+threshold, camera calibration, failed frames, and retargeting map alongside the generated
+archive.
 
 The 22-joint edge list in `configs/base.yaml` must be verified against the local joint map.
 It is part of the model input definition, not a universally valid mapping for every provider.

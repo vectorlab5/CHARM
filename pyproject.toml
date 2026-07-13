@@ -5,11 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "charm-motion"
 version = "0.1.0"
-description = "Reference implementation of CHARM and the Canonical Style Centrality Score"
+description = "Implementation of CHARM and the Canonical Style Centrality Score"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-  {name = "You Fu", email = "fuyou@sxgkd.edu.cn"},
+  {name = "Anonymous"},
 ]
 dependencies = [
   "numpy>=1.26",
