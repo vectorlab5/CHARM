@@ -1,0 +1,7 @@
+extends: base.yaml
+dataset: balinese
+num_categories: 24
+num_performers: 14
+data:
+  path: data/processed/balinese_motions.npz
+  split_path: data/balinese_splits.json

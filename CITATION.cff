@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the CHARM paper."
+title: "CHARM: Canonical Heritage-Aware Representation and Motion Modeling"
+type: software
+version: 0.1.0
+repository-code: "https://github.com/vectorlab5/CHARM"
+url: "https://github.com/vectorlab5/CHARM"
+authors:
+  - family-names: Fu
+    given-names: You
+    email: fuyou@sxgkd.edu.cn
+preferred-citation:
+  type: article
+  title: "Canonical Style beyond Realism: Disentangled, Low-Resource Modeling of Intangible Heritage Performance"
+  authors:
+    - family-names: Fu
+      given-names: You
+  journal: Information Sciences

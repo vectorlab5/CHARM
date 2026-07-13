@@ -1,0 +1,70 @@
+seed: 7
+device: auto
+
+data:
+  path: data/processed/motions.npz
+  split_path: data/splits.json
+  num_joints: 22
+  coordinate_dim: 3
+  sequence_length: 196
+  # Undirected 22-joint topology. Update this list if local preprocessing uses
+  # a different joint order or skeleton.
+  skeleton_edges:
+    - [0, 1]
+    - [0, 2]
+    - [0, 3]
+    - [1, 4]
+    - [2, 5]
+    - [3, 6]
+    - [4, 7]
+    - [5, 8]
+    - [6, 9]
+    - [7, 10]
+    - [8, 11]
+    - [9, 12]
+    - [9, 13]
+    - [9, 14]
+    - [12, 15]
+    - [13, 16]
+    - [14, 17]
+    - [16, 18]
+    - [17, 19]
+    - [18, 20]
+    - [19, 21]
+
+model:
+  hidden_dim: 256
+  style_dim: 128
+  execution_dim: 128
+  transformer_layers: 4
+  attention_heads: 8
+  dropout: 0.1
+
+loss:
+  lambda_adversarial: 1.0
+  lambda_contrastive: 0.5
+  lambda_cycle: 0.5
+  contrastive_temperature: 0.07
+
+reference:
+  flow_layers: 8
+  flow_hidden_dim: 256
+  flow_epochs: 200
+  flow_learning_rate: 0.0002
+  retrieval_k: 8
+
+diffusion:
+  steps: 1000
+  beta_start: 0.0001
+  beta_end: 0.02
+  guidance_weight: 3.0
+  condition_dropout: 0.1
+
+training:
+  representation_epochs: 1200
+  generator_epochs: 800
+  batch_size: 64
+  learning_rate: 0.0002
+  weight_decay: 0.01
+  num_workers: 4
+  grad_clip: 1.0

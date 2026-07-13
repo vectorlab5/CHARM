@@ -1,0 +1,7 @@
+extends: base.yaml
+dataset: dunhuang
+num_categories: 8
+num_performers: 6
+data:
+  path: data/processed/dunhuang_motions.npz
+  split_path: data/dunhuang_splits.json
